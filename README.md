@@ -3,12 +3,12 @@
 This [MagicMirror](https://github.com/MichMich/MagicMirror) module generates a random fact from the following questions submitted to the Google Gemini AI:
 
 - Tell me a fun fact in 50 words
-- Tell me an interesting fact about an animal in <country> in 50 words
-- Tell me an interesting fact about the country <country> in 50 words
-- Tell me about a famous historical figure from <country> in 50 words
-- Tell me about a notable historical event that happened in <country> in 50 words
+- Tell me an interesting fact about an animal in \<country\> in 50 words
+- Tell me an interesting fact about the country \<country\> in 50 words
+- Tell me about a famous historical figure from \<country\> in 50 words
+- Tell me about a notable historical event that happened in \<country\> in 50 words
 - Tell me about a notable world record in 50 wordsporting Events
-- Tell me an interesting sporting event that happened in <country> in 50 words
+- Tell me an interesting sporting event that happened in \<country\> in 50 words
 
 Inspired by the quotes shown on the [MagInkDash](https://github.com/speedyg0nz/MagInkDash) project.
 
