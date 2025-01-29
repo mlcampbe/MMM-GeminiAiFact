@@ -31,7 +31,8 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ```
-git clone https://github.com/mlcampbe/MMM-GeminiAIFact```
+git clone https://github.com/mlcampbe/MMM-GeminiAIFact
+```
 
 Navigate to the new `MMM-GeminiAIFact` folder and install the node dependencies.
 ```
