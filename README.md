@@ -2,13 +2,14 @@
 
 This [MagicMirror](https://github.com/MichMich/MagicMirror) module generates a random fact from the following questions submitted to the Google Gemini AI:
 
-- Tell me a fun fact in 50 words
-- Tell me an interesting fact about an animal in \<country\> in 50 words
-- Tell me an interesting fact about the country \<country\> in 50 words
-- Tell me about a famous historical figure from \<country\> in 50 words
-- Tell me about a notable historical event that happened in \<country\> in 50 words
-- Tell me about a notable world record in 50 wordsporting Events
-- Tell me an interesting sporting event that happened in \<country\> in 50 words
+- Tell me a fun fact in 50 words or less
+- Tell me an interesting fact about an animal in \<country\> in 50 words or less
+- Tell me an interesting fact about the country \<country\> in 50 words or less
+- Tell me about a famous historical figure from \<country\> in 50 words or less
+- Tell me about a notable historical event that happened in \<country\> in 50 words or less
+- Tell me about a notable world record in 50 words or less
+- Tell me an interesting sporting event that happened in \<country\> in 50 words or less
+- Tell me an odd but true fact in 50 words or less
 
 Inspired by the quotes shown on the [MagInkDash](https://github.com/speedyg0nz/MagInkDash) project.
 
@@ -58,6 +59,7 @@ modules: [
 		config: {
 			updateInterval: 3600000, // every 1 hour
 			geminiApiKey: " xxxxxx", // your Gemini API Key
+			model: "gemini-1.5-flash-8b", // which Gemini AI model to use
 		},
 	},
 ]
@@ -88,7 +90,13 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>XXXXXX</code> (dummy value, must be set)
 			</td>
 		</tr>
-			</tbody>
+		<tr>
+			<td><code>model</code></td>
+			<td>Which Gemini AI model to use for the fact generation
+				<br><b>Default value:</b> <code>gemini-1.5-flash-8b</code> 
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 
