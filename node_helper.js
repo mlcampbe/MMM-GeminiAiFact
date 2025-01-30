@@ -10,6 +10,7 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function(notification, payload) {
     if (notification === "RUN_COMMAND") {
       this.apikey=payload.geminiApiKey;
+      this.model=payload.model;
       this.runCommand();
     }
   },
@@ -21,11 +22,11 @@ module.exports = NodeHelper.create({
 
     const genAI = new GoogleGenerativeAI(this.apikey);
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash-exp",
+      model: this.model,
     });
     const generationConfig = {
       presencePenalty: 1.5,
-      frequencyPenalty:1.5,
+      frequencyPenalty:1.5, 
       temperature: 2.0,
       topP: 1.0,
       topK: 40,
@@ -47,19 +48,21 @@ module.exports = NodeHelper.create({
   get_topic: function() {
     topics = [
             {title: "Did You Know?",
-             prompt: "Tell me a fun fact in 50 words"},
+             prompt: "Tell me a fun fact in 50 words or less"},
             {title: "All About Animals",
-             prompt: "Tell me an interesting fact about an animal in <country> in 50 words"},
+             prompt: "Tell me an interesting fact about an animal in <country> in 50 words or less"},
             {title: "All About Countries",
-             prompt: "Tell me an interesting fact about the country <country> in 50 words"},
+             prompt: "Tell me an interesting fact about the country <country> in 50 words or less"},
             {title: "Famous People",
-             prompt: "Tell me about a famous historical figure from <country> in 50 words"},
+             prompt: "Tell me about a famous historical figure from <country> in 50 words or less"},
             {title: "Notable Events",
-             prompt: "Tell me about a notable historical event that happened in <country> in 50 words"},
+             prompt: "Tell me about a notable historical event that happened in <country> in 50 words or less"},
             {title: "Notable World Records",
-             prompt: "Tell me about a notable world record in 50 words"},
+             prompt: "Tell me about a notable world record in 50 words or less"},
             {title: "Sporting Events",
-             prompt: "Tell me an interesting sporting event that happened in <country> in 50 words"}
+             prompt: "Tell me an interesting sporting event that happened in <country> in 50 words or less"},
+            {title: "Odd, But True!",
+             prompt: "Tell me an odd but true fact in 50 words or less"}
         ];
     const topicIndex = Math.floor(Math.random() * topics.length);
     return topics[topicIndex];

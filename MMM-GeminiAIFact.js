@@ -1,6 +1,7 @@
 Module.register("MMM-GeminiAIFact", {
   defaults: {
     updateInterval: 3600000,  // Run the command every hour
+    model: "gemini-1.5-flash-8b",
     geminiApiKey: "your key here"
 
   },
@@ -36,7 +37,7 @@ Module.register("MMM-GeminiAIFact", {
     if (this.fact) {
       AIfact.innerHTML = this.fact;
     } else {
-      AIfact.innerHTML = "Waiting for command output...";
+      AIfact.innerHTML = "Waiting for Gemini AI...";
     }
     wrapper.appendChild(AIfact);
     return wrapper;
